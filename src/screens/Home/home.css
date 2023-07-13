@@ -1,0 +1,80 @@
+.home-card {
+  background-color: #fff;
+}
+
+.heading {
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.text-danger {
+  color: #c90000 !important;
+}
+
+.text-primary {
+  color: #0053b5 !important;
+}
+
+.btn-outline-primary {
+  border-color: #0053b5 !important;
+  color: #0053b5 !important;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active {
+  background: none !important;
+}
+
+.items p {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.satellites .items button {
+  font-size: 14px;
+  border: none;
+  background: none;
+
+  width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.satellites .items button:active {
+  opacity: 0.8;
+  background-color: rgba(227, 225, 225, 0.576);
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background-color: #0053b5 !important;
+}
+
+.home-card .btn {
+  font-size: 0.85rem;
+  padding: 0.6rem;
+  transition: all 0.3 ease-in-out;
+}
+
+.home-card .btn:active {
+  background-color: #0054b5cd !important;
+}
+
+.input {
+  border: none;
+  background: #f4f4f4;
+  padding: 8px;
+  color: #373737;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid #e3e2e2fa;
+}
