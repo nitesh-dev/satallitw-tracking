@@ -4,7 +4,7 @@ import SearchItem from './SearchItem';
 const Search = ({ data }) => {
   const [searchResults, setSearchResults] = useState(null);
   const [searchInput, setSearchInput] = useState('');
-  const [searchParameter, setSearchParameter] = useState('name');
+  const [searchParameter, setSearchParameter] = useState('Name');
   const [showDowpdown, setShowDropdown] = useState(false);
 
   const handleSearch = () => {
@@ -18,8 +18,8 @@ const Search = ({ data }) => {
   };
 
   return (
-    <div className="col-md-6 col-12 my-5 my-md-5 ms-auto px-lg-5">
-      <div className="p-md-3 search-container">
+    <div className="col-md-6 col-12 my-5 my-md-5 ms-auto px-md-5">
+      <div className="search-container">
         <p className="mb-2 heading">Search</p>
         <div className="search-box home-card p-2 shadow-sm rounded d-flex justify-content-between">
           <div style={{ width: '63%' }}>
