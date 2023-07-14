@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import SearchItem from './SearchItem';
+import { AppContext } from '../../context/AppContext';
 
-const Search = ({ data }) => {
+const Search = () => {
   const [searchResults, setSearchResults] = useState(null);
   const [searchInput, setSearchInput] = useState('');
   const [searchParameter, setSearchParameter] = useState('Name');
   const [showDowpdown, setShowDropdown] = useState(false);
+  const {data} = useContext(AppContext)
 
   const handleSearch = () => {
     if (searchInput?.length > 0) {
       const results = data.filter((item) =>
-        item.title.toLowerCase().includes(searchInput)
+        item.name.toLowerCase().includes(searchInput)
       );
 
       setSearchResults(results);
@@ -18,7 +20,7 @@ const Search = ({ data }) => {
   };
 
   return (
-    <div className="col-md-6 col-12 my-5 my-md-5 ms-auto px-md-5">
+    <div className="col-md-6 col-12 my-5 my-md-5 ms-auto px-lg-5">
       <div className="search-container">
         <p className="mb-2 heading">Search</p>
         <div className="search-box home-card p-2 shadow-sm rounded d-flex justify-content-between">
@@ -79,7 +81,7 @@ const Search = ({ data }) => {
             <p className="heading mb-2 px-2 px-md-3">Results</p>
             {searchResults?.length ? (
               searchResults?.map((item, i) => (
-                <SearchItem key={i} title={item.title} />
+                <SearchItem key={i} title={item.name} />
               ))
             ) : (
               <div className="border-top">
