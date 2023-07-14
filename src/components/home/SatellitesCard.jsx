@@ -7,10 +7,10 @@ const SatellitesCard = ({title, handleDelete, handleUpdate, handleDetails}) => {
 
       <div className="px-2 px-md-3 py-2 d-flex gap-md-3 gap-2">
         <button type='button' onClick={() => handleDelete(title)}>
-          <i class="bi bi-trash text-danger"></i>
+          <i className="bi bi-trash text-danger"></i>
         </button>
         <button type='button' onClick={handleUpdate}>
-          <i class="bi bi-pencil-square text-primary"></i>
+          <i className="bi bi-pencil-square text-primary"></i>
         </button>
       </div>
     </div>

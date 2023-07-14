@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import './home.css';
 import SatellitesCard from '../../components/home/SatellitesCard';
-import { earth3d } from '../../assets';
 import SearchItem from '../../components/home/SearchItem';
 import Modal from '../../components/modal/Modal';
+import Map from '../../components/map/Map';
 
 const data = [
   {
@@ -86,11 +86,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="col-md-6 col-12 mt-5 mt-md-0  px-md-5">
-          <div className="home-card shadow-sm rounded p-2 p-md-3">
-            <img className="w-100" src={earth3d} alt="" />
-          </div>
-        </div>
+        <Map />
 
         <div className="col-md-6 col-12 my-5 my-md-5 ms-auto px-md-5">
           <div className="p-md-3 search-container">
@@ -117,7 +113,7 @@ const Home = () => {
                   onClick={handleSearch}
                   className="w-100 btn btn-primary "
                 >
-                  <i class="bi bi-search"></i>
+                  <i className="bi bi-search"></i>
                 </button>
               </div>
             </div>
