@@ -18,7 +18,7 @@ const Search = ({ data }) => {
   };
 
   return (
-    <div className="col-md-6 col-12 my-5 my-md-5 ms-auto px-md-5">
+    <div className="col-md-6 col-12 my-5 my-md-5 ms-auto px-lg-5">
       <div className="p-md-3 search-container">
         <p className="mb-2 heading">Search</p>
         <div className="search-box home-card p-2 shadow-sm rounded d-flex justify-content-between">
