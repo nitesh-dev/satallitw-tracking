@@ -78,3 +78,21 @@ button:focus {
   outline: none;
   border: 1px solid #e3e2e2fa;
 }
+
+
+.search-dropdown {
+  width: 120% !important;
+  background-color: #fff;
+  padding: 1rem 0;
+  top: 2rem;
+}
+
+.search-dropdown-item{
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px !important;
+}
+
+.search-dropdown-item:active {
+  background-color: #5555551c;
+}
