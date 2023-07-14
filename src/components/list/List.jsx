@@ -1,36 +1,43 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import SatellitesCard from './SatellitesCard';
 import Modal from '../modal/Modal';
+import { AppContext } from '../../context/AppContext';
 
-const List = ({ data }) => {
+const List = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
   const [modalBtn, setModalBtn] = useState('');
   const [satelliteName, setSatelliteName] = useState('');
+  const [details, setDetails] = useState(null);
+
+  const {data, setData} = useContext(AppContext)
 
   const handleAdd = () => {
     setShowModal(true);
     setModalTitle('Add');
     setModalBtn('Add');
+    setDetails(null);
   };
 
-  const handleDelete = (title) => {
+  const handleDelete = (data) => {
     setShowModal(true);
     setModalTitle('Delete');
     setModalBtn('CONTINUE');
-    setSatelliteName(title);
+    setDetails(data);
   };
 
-  const handleUpdate = () => {
+  const handleUpdate = (data) => {
     setShowModal(true);
     setModalTitle('Update');
     setModalBtn('Update');
+    setDetails(data);
   };
 
-  const handleDetails = () => {
+  const handleDetails = (data) => {
     setShowModal(true);
     setModalTitle('Details');
     setModalBtn('Close');
+    setDetails(data);
   };
 
   return (
@@ -41,9 +48,10 @@ const List = ({ data }) => {
         btn={modalBtn}
         showModal={showModal}
         setShowModal={setShowModal}
+        details={details}
       />
 
-      <div className="col-md-6 col-12 px-md-5 ">
+      <div className="col-md-6 col-12 px-lg-5 ">
         <div className="home-card py-2 py-md-3 shadow-sm rounded satellites">
           <p className="heading px-2 px-md-3 mb-2">Satellites</p>
           {data?.map((item, i) => (
@@ -52,7 +60,7 @@ const List = ({ data }) => {
               handleDelete={handleDelete}
               handleUpdate={handleUpdate}
               key={i}
-              title={item.title}
+              data={item}
             />
           ))}
 
