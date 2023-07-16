@@ -179,6 +179,7 @@ const Map = () => {
         scene.add(lineCircleGroup);
         this.init();
       }
+
       init() {
         this.renderer.domElement.addEventListener('click', (e) => {
           const pointer = new THREE.Vector2();
@@ -219,11 +220,24 @@ const Map = () => {
           }
         }
       }
+
       animate() {
         this.controls.update();
         this.renderer.render(scene, this.camera);
       }
-      resize() {}
+
+      resize() {
+        var width = this.container.offsetWidth;
+        var height = this.container.offsetHeight;
+
+        // Update renderer size
+        this.renderer.setSize(width, height);
+
+        // Update camera aspect ratio
+        this.camera.aspect = width / height;
+        this.camera.updateProjectionMatrix();
+      }
+
 
       createEarth() {
         // setting up earth model
@@ -264,7 +278,22 @@ const Map = () => {
 
     let previousTimestamp = 0;
     const earthSpeed = 0.1;
-    app.camera.position.z = 5;
+    app.camera.position.z = 5
+
+
+    window.addEventListener('resize', function(){
+      app.resize()
+    })
+
+
+
+
+
+
+
+
+
+
 
     // called from react
 
@@ -354,7 +383,6 @@ const Map = () => {
       containerRef.current.removeChild(app.renderer.domElement);
     };
   }, []);
-
   
 
  
